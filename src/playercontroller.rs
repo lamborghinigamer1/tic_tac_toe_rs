@@ -95,7 +95,7 @@ impl Playercontroller {
             }
         }
         self.game.show_grid();
-        if self.game.board.check_draw() {
+        if self.game.board.check_draw() && self.game.board.check_winner() == 0 {
             println!("Draw!");
         } else {
             println!(

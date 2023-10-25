@@ -10,7 +10,9 @@ impl DisplayGrid {
         DisplayGrid { board }
     }
     pub fn show_grid(&self) {
-        clearscreen::clear().expect("failed to clear screen");
+        // Clear screen
+        print!("\x1B[2J\x1B[1;1H");
+        
         println!("Y |");
         for i in (0..3).rev() {
             print!("{}", i + 1);

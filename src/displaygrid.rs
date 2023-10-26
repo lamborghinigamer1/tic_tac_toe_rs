@@ -18,10 +18,10 @@ impl DisplayGrid {
             print!("{}", i + 1);
             for j in 0..3 {
                 let toeindex = i * 3 + j;
-                if self.board.grid[toeindex] == 0 {
+                if self.board.grid[toeindex] == ' ' {
                     print!("[ ]");
                 } else {
-                    print!("[{}]", self.board.grid_icon[toeindex]);
+                    print!("[{}]", self.board.grid[toeindex]);
                 }
             }
             println!("");
@@ -42,10 +42,10 @@ impl DisplayGrid {
             fullstring.push_str(&format!("{}", i + 1));
             for j in 0..3 {
                 let toeindex = i * 3 + j;
-                if self.board.grid[toeindex] == 0 {
+                if self.board.grid[toeindex] == ' ' {
                     fullstring.push_str("[ ]");
                 } else {
-                    fullstring.push_str(&format!("[{}]", self.board.grid_icon[toeindex]));
+                    fullstring.push_str(&format!("[{}]", self.board.grid[toeindex]));
                 }
             }
             fullstring.push_str("\n");
